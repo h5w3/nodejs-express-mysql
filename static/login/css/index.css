@@ -1,0 +1,10 @@
+#wrapper{
+    width: 300px;
+    margin: 8% auto;
+}
+label.error{
+    color: red;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}

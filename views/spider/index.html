@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link rel="stylesheet" href="/boot/css/bootstrap.min.css" type="text/css">
+    <title>SpiderMan</title>
+    <style>
+        #out-data{
+            width:100%;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="out-data"></div>
+
+        <button type="button" class="btn btn-danger" id="spider-run">SpiderMan开始工作</button>
+
+    </div>
+
+    <script src="/public/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#spider-run").on("click", function () {
+                console.log("==...开始");
+                $.ajax({
+                    url: 'run/',
+                    type: "GET",
+                    success: function (d) {
+                        console.log('启动成功！');
+                        //$("#out-data").html(JSON.stringify(d));
+                    },
+                    error: function (d) {
+                        console.log('启动失败！');
+                        //$("#out-data").html(d);
+                    }
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>
